@@ -1,6 +1,7 @@
 FROM python:3
-ADD app/config.py /
-ADD app/BinanceAPI.py /
+ADD app/* /
+ADD db/* /db/
+
 ADD trader.py /
 RUN pip install requests
-CMD [ "python", "./trader.py" ]
+CMD [ "sh", "-c", "python ./trader.py --symbol XRPBTC --amount 10 --profit 3 --stop_loss 4 --wait_time 2"]

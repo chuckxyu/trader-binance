@@ -332,7 +332,7 @@ class Trading():
         # Screen log
         if self.option.prints and self.order_id == 0:
             spreadPerc = (lastAsk/lastBid - 1) * 100.0
-            print('price:%.8f buyp:%.8f sellp:%.8f-bid:%.8f ask:%.8f spread:%.2f' % (lastPrice, buyPrice, profitableSellingPrice, lastBid, lastAsk, spreadPerc))
+            print('-> %s -price:%.8f buyp:%.8f sellp:%.8f-bid:%.8f ask:%.8f spread:%.2f' % (time.strftime('%l:%M%p %Z on %b %d, %Y'), lastPrice, buyPrice, profitableSellingPrice, lastBid, lastAsk, spreadPerc))
         
         # analyze = threading.Thread(target=analyze, args=(symbol,))
         # analyze.start()
